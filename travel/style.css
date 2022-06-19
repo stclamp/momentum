@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Aleo';
     font-weight: 400;
@@ -26,6 +30,15 @@ body {
     cursor: pointer;
     color: #fff;
     font-family: 'Red Hat Text';
+    transition: 0.5s ease;
+}
+
+.main_btn:hover {
+    background-color: #074652;
+}
+
+.main_btn:active{
+    transform: scale(0.9);
 }
 
 .main_title {
@@ -177,7 +190,7 @@ header {
     font-size: 24px;
     line-height: 29px;
     font-style: italic;
-    
+    outline: none;
     padding-left: 23px;
 }
 
@@ -291,6 +304,7 @@ header {
     display: block;
     margin-right: 10px;
     cursor: pointer;
+    transition: 0.5s ease;
 }
 
 .dot:last-child {
@@ -298,6 +312,10 @@ header {
 }
 
 .dot.active {
+    background: rgb(242, 120, 92);
+}
+
+.dot:hover {
     background: rgb(242, 120, 92);
 }
 
@@ -365,6 +383,11 @@ header {
     font-size: 20px;
     line-height: 24px;
     color: #0D606F;
+    transition: 0.5s ease;
+}
+
+.stories_blog_link-text, .stories_blog_link-text a:hover{
+    color: #074652;
 }
 
 .stories_blog_link-text a {
@@ -412,16 +435,26 @@ footer .container {
     right: 0;
 }
 
-.footer_social a {
+.footer_social {
+    display: flex;
+    list-style-type: none;
+}
+
+.footer_social li {
     margin-right: 10px;
 }
 
-.footer_social a:last-child {
+.footer_social li a:last-child {
     margin-right: 0;
 }
 
-.footer_social a svg {
+.footer_social li a svg {
     width: 34px;
     height: 34px;
     fill: #fff;
+    transition: 0.5s ease;
+}
+
+.footer_social li a svg:hover {
+    fill: rgb(146, 146, 146);
 }
