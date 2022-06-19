@@ -1,6 +1,7 @@
 *,*::after, *::before {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Aleo';
     font-weight: 400;
@@ -11,6 +12,18 @@ body {
     width: 1200px;
     margin: 0 auto;
 }
+
+.main_btn {
+    background-color: #0D606F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Red Hat Text';
+}
+
+/* HEADER */
 
 header {
     background-color: rgba(242, 120, 92, 0.7);
@@ -53,7 +66,7 @@ header {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-right: 196px;
+    margin-right: 188px;
 }
 
 .header_menu_list-item {
@@ -90,19 +103,80 @@ header {
    opacity: 1;
 }
 
-.main_btn {
-    background-color: #0D606F;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
-    border-radius: 10px;
-    
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    font-family: 'Red Hat Text';
-}
-
 .header_login_btn {
     font-size: 16px;
-    line-height: 21px;
-    padding: 10px 30px;
+    line-height: 23px;
+    padding: 10px 34px;
 }
+
+/* PREVIEW SECTION */
+
+.preview {
+    background-image: url('img/preview_bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    padding-top: 122px;
+    padding-bottom: 254px;
+}
+
+.preview_wrapper {
+    width: 889px;
+}
+
+.preview_title {
+    margin: 0;
+    font-size: 80px;
+    line-height: 96px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.preview_subtitle {
+    margin-top: 32px;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.preview_search_block {
+    margin-top: 46px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview_search_input {
+    background: none;
+    border: none;
+    color: #F2785C;
+    width: 70%;
+    font-size: 24px;
+    line-height: 29px;
+    font-style: italic;
+    
+    padding-left: 23px;
+}
+
+.preview_search_input::placeholder{
+    color: #F2785C;
+    font-family: 'Aleo';
+    font-size: 24px;
+    line-height: 29px;
+    font-style: italic;
+}
+
+.preview_search_btn {
+    padding: 13.5px 32.5px;
+    font-size: 24px;
+    line-height: 32px;
+}
+
