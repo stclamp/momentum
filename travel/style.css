@@ -1,0 +1,108 @@
+*,*::after, *::before {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Aleo';
+    font-weight: 400;
+    
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: rgba(242, 120, 92, 0.7);
+    box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 0;
+}
+
+.header_wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.header_logo {
+    display: flex;
+    margin-right: 160px;
+}
+
+.header_logo_img {
+    width: 30px;
+    height: 30px;
+}
+
+.header_logo_text {
+    font-family: 'Magra';
+    font-size: 32px;
+    line-height: 39px;
+    font-weight: 700;
+    margin-left: 6px;
+    color: #fff;
+}
+
+.header_menu_list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 196px;
+}
+
+.header_menu_list-item {
+    margin-right: 42px;
+}
+
+.header_menu_list-item:last-child {
+    margin-right: 0;
+}
+
+.header_menu_list-item a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Red Hat Text';
+    font-size: 16px;
+    line-height: 21px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.header_menu_list-item a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    bottom: 0px;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.header_menu_list-item a:hover::after {
+   opacity: 1;
+}
+
+.main_btn {
+    background-color: #0D606F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Red Hat Text';
+}
+
+.header_login_btn {
+    font-size: 16px;
+    line-height: 21px;
+    padding: 10px 30px;
+}
