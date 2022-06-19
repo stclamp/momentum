@@ -5,7 +5,7 @@
 body {
     font-family: 'Aleo';
     font-weight: 400;
-    
+    position: relative;
 }
 
 .container {
@@ -381,4 +381,47 @@ header {
 
 .stories_btn img {
     margin-right: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer .container {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+}
+
+.footer_all-right {
+    color: #fff;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.footer_social {
+    position: absolute;
+    right: 0;
+}
+
+.footer_social a {
+    margin-right: 10px;
+}
+
+.footer_social a:last-child {
+    margin-right: 0;
+}
+
+.footer_social a svg {
+    width: 34px;
+    height: 34px;
+    fill: #fff;
 }
