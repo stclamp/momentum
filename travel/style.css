@@ -94,7 +94,7 @@ header {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-right: 188px;
+    margin-right: 191px;
 }
 
 .header_menu_list-item {
@@ -134,7 +134,7 @@ header {
 .header_login_btn {
     font-size: 16px;
     line-height: 23px;
-    padding: 10px 34px;
+    padding: 10px 30px;
 }
 
 /* PREVIEW SECTION */
@@ -211,7 +211,7 @@ header {
 /* STEPS SECTION */
 
 .steps {
-    padding-top: 80px;
+    padding-top: 48px;
 }
 
 .steps_cards {
@@ -220,8 +220,6 @@ header {
     flex: 1;
     align-items: center;
     justify-content: space-between;
-    padding-left: 11.5px;
-    padding-right: 11.5px;
 }
 
 .steps_card {
@@ -230,12 +228,17 @@ header {
     align-items: center;
 }
 
+.steps_card:nth-child(2) {
+    flex-grow: 2;
+    margin-left: 70px;
+}
+
 
 .steps_card-square {
     background: #F2785C;
     border-radius: 16px;
-    width: 102px;
-    height: 102px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,7 +259,7 @@ header {
 /* DESTINATION SECTION */
 
 .destination {
-    padding-top: 97px;
+    padding-top: 44px;
     overflow-x: hidden;
 }
 
@@ -271,6 +274,11 @@ header {
 
 .destination_single_image {
     position: relative;
+    
+}
+
+.destination_single_image:first-child{
+    margin-left: 59px;
 }
 
 .destination_single_image img {
@@ -286,14 +294,14 @@ header {
     line-height: 42px;
     font-family: 'Red Hat Text';
     text-transform: uppercase;
-    bottom: 40px;
-    left: 14px;
+    bottom: 45px;
+    left: 15px;
 }
 
 .destination_dots {
     display: flex;
     justify-content: center;
-    margin-top: 24px;
+    margin-top: 19px;
 }
 
 .dot {
@@ -323,7 +331,7 @@ header {
     display: flex;
     margin: auto;
     margin-top: 40px;
-    padding: 13.5px 31px;
+    padding: 9.5px 32px;
     align-items: center;
     justify-content: space-between;
     font-size: 24px;
@@ -348,16 +356,18 @@ header {
     padding-bottom: 60px;
 }
 
+
+
 .stories_blog_links {
     background-color: rgba(255,255,255,0.7);
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 47px;
+    padding-bottom: 43px;
 }
 
 .stories_blog_link {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 }
 
 .stories_blog_links-descr {
@@ -367,7 +377,9 @@ header {
 
 .stories_blog_link-img {
     filter: drop-shadow(0px 4px 4px #0D606F);
-    border-radius: 16px;
+    border-radius: 18px;
+    width: 400px;
+    height: 250px;
 }
 
 .stories_blog_link-title {
@@ -376,6 +388,10 @@ header {
     font-size: 35px;
     line-height: 42px;
     color: #0D606F;
+}
+
+.stories_blog_link-text {
+    margin-top: 23px;
 }
 
 .stories_blog_link-text, .stories_blog_link-text a {
@@ -394,23 +410,27 @@ header {
     font-weight: 700;
 }
 
+.stories_btn_block {
+    margin-top: 37px;
+}
+
 .stories_btn {
     display: flex;
     align-items: center;
     margin: auto;
-    padding: 13.5px 31px;
+    padding: 7.5px 35px;
     font-size: 24px;
 }
 
 .stories_btn img {
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 /* FOOTER */
 
 footer {
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     left: 0;
     width: 100%;
 }
@@ -428,11 +448,12 @@ footer .container {
     line-height: 21px;
     font-weight: 400;
     text-align: center;
+    font-family: 'Red Hat Text';
 }
 
 .footer_social {
     position: absolute;
-    right: 0;
+    right: -14px;
 }
 
 .footer_social {
@@ -441,8 +462,9 @@ footer .container {
 }
 
 .footer_social li {
-    margin-right: 10px;
+    margin-right: 3px;
 }
+
 
 .footer_social li a:last-child {
     margin-right: 0;
@@ -453,6 +475,11 @@ footer .container {
     height: 34px;
     fill: #fff;
     transition: 0.5s ease;
+}
+
+.footer_social li a svg:last-child {
+    width: 52px;
+    margin-left: 5px;
 }
 
 .footer_social li a svg:hover {
