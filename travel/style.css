@@ -80,6 +80,10 @@ header {
     height: 30px;
 }
 
+.burger_icon {
+    display: none;
+}
+
 .header_logo_text {
     font-family: 'Magra';
     font-size: 32px;
@@ -94,11 +98,20 @@ header {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-right: 191px;
+    margin-right: 149px;
 }
 
 .header_menu_list-item {
     margin-right: 42px;
+}
+
+.header_menu_list-item.burger {
+    display: none;
+    
+}
+
+.burger_icon, .burger_close_icon {
+    display: none;  
 }
 
 .header_menu_list-item:last-child {
