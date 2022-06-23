@@ -1,7 +1,4 @@
 @media (max-width: 390px) {
-    body {
-        
-    }
     .container {
         width: 360px;
        
@@ -9,8 +6,6 @@
     header {
         background: none;
         box-shadow: none;
-        overflow-x: hidden;
-        position: static;
     }
     .header_logo {
         flex-grow: 1;
@@ -72,7 +67,39 @@
     .header_login_btn {
         display: none;
     }
+
     .preview {
-        margin-top: -99px;
+        padding-top: 182px; 
+        padding-bottom: 60px;
+        background-image: url('img/preview_bg_mini.jpg');
+    }
+
+    .preview_title {
+        display: none;
+    } 
+
+    .preview_subtitle {
+        display: none;
+    }
+
+    .preview_search_block {
+        max-width: 360px;
+        padding: 11px 9px 7px 16px;
+        margin-top: -42px;
+    }
+
+    .preview_search_input {
+        width: auto;
+        padding-left: 0;
+    }
+
+    .preview_search_input, .preview_search_input::placeholder {
+        font-size: 14px;
+    }
+
+    .preview_search_btn {
+        padding: 8px 9px;
+        font-size: 11px;
+        line-height: 14px;
     }
 }
