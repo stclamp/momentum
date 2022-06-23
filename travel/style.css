@@ -404,7 +404,7 @@ header {
 .stories_blog_link {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 27px;
+    margin-bottom: 26px;
 }
 
 .stories_blog_links-descr {
@@ -429,15 +429,22 @@ header {
 
 .stories_blog_link-text {
     margin-top: 23px;
+    margin-bottom: 0;
 }
 
-.stories_blog_link-text, .stories_blog_link-text a {
+.stories_blog_link-text, .stories_blog_links-descr a {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     color: #0D606F;
     transition: 0.5s ease;
 }
+
+.stories_blog_links-descr a {
+   font-weight: 700;
+}
+
+
 
 .stories_blog_link-text, .stories_blog_link-text a:hover{
     color: #074652;
