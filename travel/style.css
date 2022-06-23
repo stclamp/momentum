@@ -255,11 +255,21 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-.steps_card-square img {
-    display: block;
-    max-width: 100%;
+.steps_card:nth-child(1) .steps_card-square {
+    background-image: url('img/bicycle.svg');
+}
+
+.steps_card:nth-child(2) .steps_card-square {
+    background-image: url('img/calendar.svg');
+   
+}
+.steps_card:nth-child(3) .steps_card-square {
+    background-image: url('img/plane.svg');
 }
 
 .steps_card-descr {

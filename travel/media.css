@@ -1,5 +1,9 @@
 @media (max-width: 390px) {
-    .container {
+/* 
+    *{
+        border: 1px solid black;
+    } */
+    .container, .container_fluid {
         width: 360px;
        
     }
@@ -74,6 +78,10 @@
         background-image: url('img/preview_bg_mini.jpg');
     }
 
+    .preview_wrapper {
+        width: auto;
+    }
+
     .preview_title {
         display: none;
     } 
@@ -102,4 +110,61 @@
         font-size: 11px;
         line-height: 14px;
     }
+
+    .steps {
+        padding-top: 20px;
+    }
+
+    .main_title{
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0;
+    }
+
+    .steps_cards {
+        margin-top: 22px;
+        align-items: flex-start
+        
+    }
+
+    .steps_card {
+        flex: 1;
+        
+    }
+
+    .steps_card:nth-child(2) {
+        flex-grow: 2;
+        margin-left: 0;
+    }
+
+    .steps_card:last-child p{
+        text-align: right;
+    }
+
+    .steps_card-square {
+        width: 70px;
+        height: 70px;
+    }
+
+    .steps_card:nth-child(1) .steps_card-square {
+        background-size: 35px 32px ;
+        margin-right: 20px;
+    }
+    
+    .steps_card:nth-child(2) .steps_card-square {
+        background-size: 35px 35px;
+       
+    }
+    .steps_card:nth-child(3) .steps_card-square {
+        background-size: 40px 30px;
+        margin-left: 20px;
+    }
+
+    .steps_card-descr {
+        font-size: 10px;
+        line-height: 12px;
+        margin-top: 19px;
+    }
+
+
 }
