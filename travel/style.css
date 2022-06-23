@@ -51,6 +51,14 @@ body {
     font-weight: 400;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 /* HEADER */
 
 header {
@@ -297,6 +305,7 @@ header {
 
 .destination_single_image {
     position: relative;
+    display: block;
     
 }
 
@@ -307,6 +316,7 @@ header {
 .destination_single_image img {
     margin-right: 60px;
     border-radius: 16px;
+    
 }
 
 .destination_single_image span {
@@ -350,11 +360,15 @@ header {
     background: rgb(242, 120, 92);
 }
 
+.arrow_right, .arrow_left {
+    display: none;
+}
+
 .destination_btn {
     display: flex;
     margin: auto;
-    margin-top: 40px;
-    padding: 9.5px 32px;
+    margin-top: 41px;
+    padding: 13.5px 32px;
     align-items: center;
     justify-content: space-between;
     font-size: 24px;

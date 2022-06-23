@@ -109,6 +109,7 @@
         padding: 8px 9px;
         font-size: 11px;
         line-height: 14px;
+        margin-top: -3px;
     }
 
     .steps {
@@ -166,5 +167,87 @@
         margin-top: 19px;
     }
 
+    .destination {
+        padding-top: 11px;
+    }
+
+    .destination_slider {
+        margin-top: 20px;
+    }
+
+    .destination_images {
+        position: relative;
+    }
+
+    .destination_single_image {
+        width: 360px;
+        margin: auto;
+        
+    }
+    .destination_single_image:first-child {
+        margin-left: auto;
+    }
+    .destination_single_image:nth-child(2), .destination_single_image:nth-child(3) {
+        display: none;
+    }
+
+    .destination_single_image img {
+        margin-right: 0;
+        border-radius: 16px;
+        width: 100%;
+    }
+
+    .destination_single_image span {
+        top: 8px;
+        left: 16px;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .destination_dots {
+        margin-top: -23px;
+        z-index: 99;
+        position: relative;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        margin-right: 6px;
+    }
+
+    .dot:last-child {
+        margin-right: 0;
+    }
+
+    .arrow_left, .arrow_right {
+        display: block;
+        position: absolute;
+    }
+
+    .arrow_left {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 26px;
+    }
+
+    .arrow_right {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 26px;
+    }
+
+    .destination_btn {
+        padding: 7.5px 12px;
+        font-size: 11px;
+        line-height: 14px;
+        margin-top: 22px;
+    }
+
+    .destination_btn img {
+        width: 10px;
+        height: 10px;
+        margin-right: 6px;
+    }
 
 }

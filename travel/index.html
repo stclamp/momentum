@@ -85,25 +85,36 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="destination" id="destination">
+        <section class="destination" id="destination">
             <div class="container">
                 <h2 class="destination_title main_title">POPULAR DESTINATIONS</h2>
 
             </div>
             <div class="destination_slider">
                 <div class="destination_images">
-                    <div class="destination_single_image">
-                        <img src="img/spain.jpg" alt="Spain">
+                    <div class="destination_single_image show">
+                        <picture>
+                            <source media="(max-width:390px)" srcset="img/spain_mini.jpg">
+                            <img src="img/spain.jpg" alt="Spain">
+                        </picture>
                         <span>Spain</span>
                     </div>
-                    <div class="destination_single_image">
-                        <img src="img/japan.jpg" alt="Japan">
+                    <div class="destination_single_image hide">
+                        <picture>
+
+                            <img src="img/japan.jpg" alt="Japan">
+                        </picture>
                         <span>Japan</span>
                     </div>
-                    <div class="destination_single_image">
-                        <img src="img/usa.jpg" alt="USA">
+                    <div class="destination_single_image hide">
+                        <picture>
+
+                            <img src="img/usa.jpg" alt="USA">
+                        </picture>
                         <span>USA</span>
                     </div>
+                    <img class="arrow_left" src="img/arrow-left-slider.svg" alt="Arrow left">
+                    <img class="arrow_right" src="img/arrow-right-slider.svg" alt="Arrow right">
                 </div>
                 <div class="destination_dots">
                     <span class="dot"></span>
@@ -117,7 +128,7 @@
                     Find More
                 </button>
             </div>
-        </section> -->
+        </section>
         <!-- <section class="stories" id="stories" lang="zxx">
             <h2 class="stories_title main_title">TRAVEL STORIES</h2>
             <div class="stories_wrapper">
