@@ -256,11 +256,16 @@
 
     .stories_wrapper {
         background-image: url('img/stories_bg_mini.jpg');
+        padding-bottom: 64px;
+    }
+
+    .stories_title {
+        margin-bottom: 10px;
     }
 
     .stories_blog_links {
-        padding-top: 21px;
-        padding-bottom: 3px;
+        padding-top: 11px;
+        padding-bottom: 13px;
     }
 
     .stories_blog_link {
@@ -311,4 +316,22 @@
         margin-right: 6px;
     }
 
+    footer {
+        bottom: 30px;
+    }
+
+    .footer_all-right {
+        display: none;
+    }
+
+    .footer_social {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        padding: 0;
+    }
+
+    .footer_social li {
+        margin-right: -4px;
+    }
 }
