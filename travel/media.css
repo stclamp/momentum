@@ -1,7 +1,7 @@
 
 @media only screen 
         and (min-width: 1201px)
-        and (max-width: 1440px) {
+        and (max-width: 1399px) {
 
             .container, .container_fluid {
                 padding: 0 10px;
@@ -198,6 +198,7 @@
 
     .header_menu_list.show {
         right: 0;
+        text-align: right;
     }
 
     .header_menu_list-item {
@@ -438,10 +439,9 @@
         }
 
 @media (max-width: 390px) {
-    /* 
-        *{
-            border: 1px solid black;
-        } */
+        body {
+            border-radius: 26px;
+        }
         html, body {
             overflow-x: hidden;
         }
@@ -487,6 +487,7 @@
         .header_menu_list.show {
             right: 0;
             overflow: hidden;
+            text-align: right;
         }
     
         .header_menu_list-item {
@@ -784,6 +785,10 @@
     }
 
 @media (max-width: 320px) {
+
+    body {
+        border-radius: 26px;
+    }
     .container, .container_fluid {
         width: auto;
         padding: 0 10px;
