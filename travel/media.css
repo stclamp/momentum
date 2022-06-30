@@ -6,9 +6,15 @@
             .container, .container_fluid {
                 padding: 0 10px;
             }
+
+            .header_logo {
+                margin-right: 148px;
+            }
             .footer_social {
                 right: 7px;
             }
+
+
         }
 
 @media only screen 
