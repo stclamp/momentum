@@ -445,9 +445,6 @@
         }
 
 @media (max-width: 390px) {
-        body {
-            border-radius: 26px;
-        }
         html, body {
             overflow-x: hidden;
         }
@@ -458,6 +455,7 @@
         header {
             background: none;
             box-shadow: none;
+            background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 60.1%);
         }
 
         header .container  {
@@ -791,10 +789,6 @@
     }
 
 @media (max-width: 320px) {
-
-    body {
-        border-radius: 26px;
-    }
     .container, .container_fluid {
         width: auto;
         padding: 0 10px;
