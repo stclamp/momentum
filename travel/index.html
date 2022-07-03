@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@400;700&family=Red+Hat+Text:wght@500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@400;700&family=Red+Hat+Text:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="normilize.css">
     <link rel="stylesheet" href="style.css">
@@ -263,6 +263,55 @@
             </ul>
         </div>
     </footer>
+
+    <div class="popup login">
+        <div class="popup_content">
+            <div class="popup_body">
+                <h3 class="popup_title">Log in to your account</h3>
+                <div class="popup_login_btns">
+                    <button class="popup_btn popup_facebook"><img src="img/popup_facebook.svg" alt="Facebook">Sign In
+                        with Facebook</button>
+                    <button class="popup_btn popup_google"><img src="img/popup_google.svg" alt="Google">Sign In with
+                        Google</button>
+                </div>
+                <p class="center_line">or</p>
+                <form class="popup_form">
+                    <label class="popup_email">
+                        E-mail
+                        <input type="email" class="popup_input_email">
+                    </label>
+                    <label class="popup_password">
+                        Password
+                        <input type="password" class="popup_input_password">
+                    </label>
+                    <button class="popup_btn popup_sign">Sign In</button>
+                </form>
+                <a class="forgot" href="#">Forgot Your Password?</a>
+                <div class="underline"></div>
+                <p class="create_acc">Don’t have an account? <a href="#" class="register_btn">Register</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="popup register">
+        <div class="popup_content">
+            <div class="popup_body">
+                <h3 class="popup_title">Create account</h3>
+                <form class="popup_form">
+                    <label class="popup_email">
+                        E-mail
+                        <input type="email" class="popup_input_email">
+                    </label>
+                    <label class="popup_password">
+                        Password
+                        <input type="password" class="popup_input_password">
+                    </label>
+                    <button class="popup_btn popup_sign">Sign In</button>
+                </form>
+                <div class="underline"></div>
+                <p class="create_acc">Already have an account?<a href="#" class="login_link">Log in</a></p>
+            </div>
+        </div>
+    </div>
     <script src="index.js"></script>
 </body>
 
