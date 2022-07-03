@@ -190,7 +190,7 @@
 
     .header_menu_list {
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         background-color: #F2785C;
         padding: 44px 15px 20px 44px;
         right: -600px;
@@ -476,7 +476,7 @@
     
         .header_menu_list {
             flex-direction: column;
-            position: absolute;
+            position: fixed;
             background-color: #F2785C;
             padding: 44px 15px 20px 44px;
             right: -600px;

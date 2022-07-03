@@ -11,7 +11,7 @@ let overlay = document.querySelector('.overlay');
 
 burgerClose.addEventListener('click', () => {
     burgerMenu.classList.remove('show');
-    overlay.classList.remove('show')
+    overlay.classList.remove('show');
 })
 
 menuLinks.forEach(link => {
@@ -24,10 +24,10 @@ menuLinks.forEach(link => {
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('burger_icon')) {
         burgerMenu.classList.add('show');
-        overlay.classList.add('show')
+        overlay.classList.add('show');
     } else if (!e.target.classList.contains('header_menu_list')) {
         burgerMenu.classList.remove('show');
-        overlay.classList.remove('show')
+        overlay.classList.remove('show');
     }
 })
 
