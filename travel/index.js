@@ -8,6 +8,7 @@ const header = document.querySelector('header')
 const menuList = document.querySelector('.header_menu_list');
 const menuLinks = document.querySelectorAll('.header_menu_list');
 const overlay = document.querySelector('.overlay');
+const body = document.querySelector('body');
 
 //Popup variables 
 
@@ -43,7 +44,9 @@ burgerOpen.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     burgerMenu.classList.remove('show');
     overlay.classList.remove('show');
-    popup.classList.remove('active')
+    popup.classList.remove('active');
+    popupRegister.classList.remove('active');
+    body.style.overflow = 'auto'
 })
 
 
@@ -80,9 +83,11 @@ overlay.addEventListener('click', () => {
 
 
 
-logInBtn.addEventListener('click', () => {
+logInBtn.addEventListener('click', (e) => {
+
     popup.classList.add('active');
     overlay.classList.add('show');
+    body.style.overflow = 'hidden'
 })
 
 popupForms.forEach((form, i) => {
@@ -94,6 +99,7 @@ popupForms.forEach((form, i) => {
         popup.classList.remove('active');
         popupRegister.classList.remove('active');
         overlay.classList.remove('show')
+        body.style.overflow = 'auto'
     })
 })
 
@@ -103,12 +109,15 @@ registerBtn.addEventListener('click', (e) => {
     e.preventDefault();
     popup.classList.remove('active');
     popupRegister.classList.add('active')
+    body.style.overflow = 'hidden'
+
 })
 
 logInLink.addEventListener('click', (e) => {
     e.preventDefault();
     popup.classList.add('active');
     popupRegister.classList.remove('active')
+    body.style.overflow = 'hidden'
 })
 
 
