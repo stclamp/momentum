@@ -20,74 +20,168 @@ const popupFormEmail = document.querySelectorAll('.popup_input_email');
 const popupFormPassword = document.querySelectorAll('.popup_input_password');
 const registerBtn = document.querySelector('.register_btn')
 const logInLink = document.querySelector('.login_link')
+const accountLink = document.querySelector('.account')
+
+console.log(accountLink)
+
+// Slider variables
+
+const sliderWrapper = document.querySelector('.destination_images')
+const sliderItems = document.querySelectorAll('.destination_single_image')
+const sliderDots = document.querySelectorAll('.dot');
+const sliderArrowLeft = document.querySelector('.arrow_left');
+const sliderArrowRight = document.querySelector('.arrow_right');
 
 
 // BURGER MENU
 
-burgerClose.addEventListener('click', () => {
+const closeBurger = () => {
     burgerMenu.classList.remove('show');
     overlay.classList.remove('show');
+}
+
+const openBurger = () => {
+    burgerMenu.classList.add('show');
+    overlay.classList.add('show');
+}
+
+burgerClose.addEventListener('click', () => {
+    closeBurger();
 })
 
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        burgerMenu.classList.remove('show');
-        overlay.classList.remove('show')
+        closeBurger()
     })
 })
 
+
 burgerOpen.addEventListener('click', () => {
-    burgerMenu.classList.add('show');
-    overlay.classList.add('show');
+    openBurger()
 })
 
 overlay.addEventListener('click', () => {
-    burgerMenu.classList.remove('show');
-    overlay.classList.remove('show');
+    closeBurger();
     popup.classList.remove('active');
     popupRegister.classList.remove('active');
     body.style.overflow = 'auto'
 })
 
 
-// //SLIDER
+//SLIDER
 
-// const dots = document.querySelectorAll('.dot');
-// const images = document.querySelectorAll('.destination_single_image');
+let i = 0;
 
-// let indexSlide = 0;
+const resetActiveDot = () => {
+    sliderDots.forEach(dot => {
+        dot.classList.remove('active')
+    })
+}
 
-// dots.forEach((item, i) => {
-//     item.addEventListener('click', () => {
-//         changeSlides(indexSlide)
-//         indexSlide = i;
-//     })
-// })
+resetActiveDot();
 
-// function changeSlides(index) {
+const resetShowImages = () => {
+    sliderItems.forEach(item => {
+        item.classList.add('hide')
+        item.classList.remove('show')
+    })
+}
+if (window.screen.width < 541) {
+    sliderDots[0].classList.add('active')
+} else {
+    sliderDots[1].classList.add('active')
+}
 
-//     images.forEach(item => {
-//         item.style.order = 0
-//         if (index === 0) {
-//             images[index].style.order = index
-//         } else if (index === 1) {
-//             images[index].style.order = index
-//         } else if (index === 2) {
-//             images[index].style.order = index
-//         }
-//     })
+const changeSlides = (dot, i) => {
 
-// }
+    if (window.screen.width < 541) {
+        resetShowImages();
+        sliderItems[i].classList.remove('hide')
+        sliderItems[i].classList.add('show')
+    } else {
+        if (i === 0) {
+            sliderWrapper.style.transform = 'translateX(50%)'
+        } else if (i === 1) {
+            sliderWrapper.style.transform = 'translateX(0)'
+        } else if (i === 2) {
+            sliderWrapper.style.transform = 'translateX(-50%)'
+        }
+    }
+
+    dot.classList.add('active')
+}
+
+const checkActiveArrow = (i) => {
+    if (i === 0) {
+        sliderArrowLeft.classList.remove('active');
+        sliderArrowRight.classList.add('active');
+    } else if (i === 1) {
+        sliderArrowLeft.classList.add('active');
+        sliderArrowRight.classList.add('active');
+    } else if (i === 2) {
+        sliderArrowLeft.classList.add('active');
+        sliderArrowRight.classList.remove('active');
+    }
+}
+
+sliderDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        resetActiveDot();
+        changeSlides(dot, i);
+        checkActiveArrow(i);
+    })
+
+
+})
+
+sliderItems.forEach((img, i) => {
+    img.addEventListener('click', () => {
+        resetActiveDot();
+        changeSlides(sliderDots[i], i);
+    })
+
+})
+
+
+
+sliderArrowRight.addEventListener('click', () => {
+    i++;
+    if (i <= 2) {
+        resetActiveDot();
+        changeSlides(sliderDots[i], i);
+    } else {
+        i = 2;
+    }
+
+    checkActiveArrow(i);
+})
+
+
+sliderArrowLeft.addEventListener('click', () => {
+    i--;
+    if (i >= 0) {
+        resetActiveDot();
+        changeSlides(sliderDots[i], i);
+    } else {
+        i = 0;
+    }
+
+    checkActiveArrow(i);
+})
 
 //POPUP
-
-
 
 logInBtn.addEventListener('click', (e) => {
 
     popup.classList.add('active');
     overlay.classList.add('show');
     body.style.overflow = 'hidden'
+})
+
+accountLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.classList.add('active');
+    overlay.classList.add('show');
 })
 
 popupForms.forEach((form, i) => {

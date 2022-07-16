@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="normilize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -40,7 +41,8 @@
                                 Trip</a></li>
                         <li class="header_menu_list-item"><a class="header_menu-link" href="#stories">Travel Stories</a>
                         </li>
-                        <li class="header_menu_list-item burger"><a class="header_menu-link" href="#">Account</a></li>
+                        <li class="header_menu_list-item burger account"><a class="header_menu-link"
+                                href="#">Account</a></li>
                         <li class="header_menu_list-item burger"><a class="header_menu-link"
                                 href="#footer_social">Social Media</a>
                         </li>
@@ -110,7 +112,7 @@
                     </div>
                     <div class="destination_single_image hide">
                         <picture>
-
+                            <source media="(max-width:390px)" srcset="img/japan_mini.jpg">
                             <img src="img/japan.jpg" alt="Japan">
                             <span>Japan</span>
                         </picture>
@@ -118,15 +120,16 @@
                     </div>
                     <div class="destination_single_image hide">
                         <picture>
-
+                            <source media="(max-width:390px)" srcset="img/usa_mini.jpg">
                             <img src="img/usa.jpg" alt="USA">
                             <span>USA</span>
                         </picture>
 
                     </div>
-                    <img class="arrow_left" src="img/arrow-left-slider.svg" alt="Arrow left">
-                    <img class="arrow_right" src="img/arrow-right-slider.svg" alt="Arrow right">
+
                 </div>
+                <img class="arrow_left" src="img/arrow-right-slider.svg" alt="Arrow left">
+                <img class="arrow_right active" src="img/arrow-right-slider.svg" alt="Arrow right">
                 <div class="destination_dots">
                     <span class="dot"></span>
                     <span class="dot active"></span>
@@ -312,6 +315,7 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
 
