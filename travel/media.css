@@ -122,6 +122,11 @@
         height: 140px;
         overflow: hidden;
     }
+
+    .popup {
+        min-width: 600px;
+        min-height: 75%;
+    }
 }
 
 @media only screen
@@ -322,6 +327,19 @@
         right: 0;
         padding: 0;
         justify-content: center;
+    }
+
+    .popup {
+        min-width: 369px;
+        padding: 25px 25px 8px 25px;
+    }
+
+    .popup_title {
+        font-size: 25px;
+    }
+
+    .popup_btn {
+        font-size: 17px;
     }
 }
 
@@ -829,9 +847,22 @@
         .footer_social li {
             margin-right: -4px;
         }
+
+        .popup {
+            min-width: 369px;
+            padding: 25px 25px 8px 25px;
+        }
+    
+        .popup_title {
+            font-size: 25px;
+        }
+    
+        .popup_btn {
+            font-size: 17px;
+        }
     }
 
-@media (max-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width: 389px) {
     .container, .container_fluid {
         width: auto;
         padding: 0 10px;
@@ -864,5 +895,13 @@
 
     .stories_btn_block {
         margin-top: 22px;
+    }
+
+    .popup {
+        min-width: 90%;;
+    }
+
+    .popup_title {
+        font-size: 23px;
     }
 }

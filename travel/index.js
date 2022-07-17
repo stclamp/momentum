@@ -1,4 +1,4 @@
-console.log('1. Вёрстка соответствует макету. Ширина экрана 390px +48 \n2. Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15 \n3. На ширине экрана 390рх и меньше реализовано адаптивное меню +22 \nОбщая оценка: 85.')
+console.log('1. Слайдер изображений в секции destinations +50 \n2. Нажатие на кнопку Login (кнопка Account в мобильной версии) показывает сверстанный логин попап + 50 \nНажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25 \nОбщая оценка: 125.')
 //Burger Variables
 
 const burgerOpen = document.querySelector('.burger_icon');
@@ -6,7 +6,7 @@ const burgerClose = document.querySelector('.burger_close_icon');
 const burgerMenu = document.querySelector('.header_menu_list');
 const header = document.querySelector('header')
 const menuList = document.querySelector('.header_menu_list');
-const menuLinks = document.querySelectorAll('.header_menu_list');
+const menuLinks = document.querySelectorAll('.header_menu_list-item');
 const overlay = document.querySelector('.overlay');
 const body = document.querySelector('body');
 
@@ -21,8 +21,6 @@ const popupFormPassword = document.querySelectorAll('.popup_input_password');
 const registerBtn = document.querySelector('.register_btn')
 const logInLink = document.querySelector('.login_link')
 const accountLink = document.querySelector('.account')
-
-console.log(accountLink)
 
 // Slider variables
 
@@ -51,7 +49,9 @@ burgerClose.addEventListener('click', () => {
 
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        closeBurger()
+        closeBurger();
+
+        console.log(link)
     })
 })
 
@@ -86,6 +86,7 @@ const resetShowImages = () => {
         item.classList.remove('show')
     })
 }
+
 if (window.screen.width < 541) {
     sliderDots[0].classList.add('active')
 } else {
@@ -182,6 +183,7 @@ accountLink.addEventListener('click', (e) => {
     e.preventDefault();
     popup.classList.add('active');
     overlay.classList.add('show');
+    body.style.overflow = 'hidden'
 })
 
 popupForms.forEach((form, i) => {
