@@ -57,19 +57,15 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.8);
     opacity: 0.7;
     transition: 0.7s ease;
-    z-index: 11;
+    z-index: 1;
 }
 
-.hide {
-    display: none;
-}
 
-.show {
-    display: block;
-}
+
+
 
 .hidden {
     overflow: hidden;
@@ -317,12 +313,14 @@ header {
 .destination_images {
     display: flex;
     justify-content: center;
+    transition: all 0.5s ease;
 }
 
 .destination_single_image {
     position: relative;
     display: block;
-    
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
 .destination_single_image:first-child{
@@ -544,4 +542,169 @@ footer .container {
 
 .footer_social li a svg:hover {
     fill: rgb(146, 146, 146);
+}
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 25px 45px 8px 45px;
+    z-index: 999;
+    min-width: 650px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+}
+
+.popup.register .popup_form {
+    margin-top: 40px;
+}
+
+.popup.login.active {
+    opacity: 1;
+    visibility: visible;
+    top: 50%;
+}
+
+.popup.register.active {
+    opacity: 1;
+    visibility: visible;
+    top: 50%;
+}
+
+.popup_body {
+    max-width: 560px;
+}
+
+.popup_title{
+    font-size: 32px;
+    line-height: 39px;
+    color: #0D606F;
+    text-align: center;
+    margin: 0;
+}
+
+.popup_login_btns {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup_btn {
+    box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    padding: 16px 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-family: 'Red Hat Text';
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.popup_btn img {
+    margin-right: 15px;
+}
+
+.popup_facebook {
+    background-color: #1877F2;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.popup_google {
+    margin-bottom: 30px;
+    color: #0D606F;
+}
+
+.center_line {
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(13, 96, 111, 0.5);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 0 9px;
+}
+
+.center_line::before, .center_line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: calc(50% - 20px);
+    height: 1px;
+    background-color: rgba(13, 96, 111, 0.5);
+}
+
+.center_line::after {
+    left: auto;
+    right: 0;
+}
+
+label {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #0D606F;
+}
+
+.popup_input_email, .popup_input_password {
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    border: none;
+    display: block;
+    width: 100%;
+    min-height: 54px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+} 
+
+.popup_sign {
+    margin-top: 25px;
+    color: #fff;
+    background-color: #0D606F;
+}
+
+.forgot {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #0D606F;
+    font-weight: 700;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-size: 15px;
+}
+
+.underline {
+    width: 100%;
+    height: 1px;
+    margin-top: 26px;
+    background-color: rgba(13, 96, 111, 0.5);;
+}
+
+.create_acc, .create_acc .register_btn, .login_link {
+    margin-top: 20px;
+    text-align: center;
+    color: rgba(13, 96, 111, 0.5);
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.create_acc .register_btn, .login_link {
+    color: #0D606F;
 }
