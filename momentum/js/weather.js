@@ -7,7 +7,7 @@ export const weather = () => {
   const weatherHumidity = document.querySelector(".humidity");
   const weatherError = document.querySelector(".weather-error");
 
-  weatherCity.addEventListener("input", () => {
+  weatherCity.addEventListener("change", () => {
     localStorage.setItem("city", weatherCity.value);
     getWeather();
   });
@@ -16,37 +16,28 @@ export const weather = () => {
     ? (weatherCity.value = localStorage.getItem("city"))
     : (weatherCity.value = "");
 
-  function getWeather() {
-    fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${localStorage.getItem(
-        "city"
-      )}&limit=5&appid=fc341543b020fb49164d8280a67986ab`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        if (data.length === 0) {
-          weatherError.textContent = `Error! city not found for '${weatherCity.value}'!`;
-        } else {
-          weatherError.textContent = "";
-        }
-        fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${data[0].lat}&lon=${data[0].lon}&units=metric&appid=fc341543b020fb49164d8280a67986ab`
-        )
-          .then((response) => {
-            return response.json();
-          })
-          .then((dataWeather) => {
-            weatherIcon.src = `http://openweathermap.org/img/w/${dataWeather.weather[0].icon}.png`;
-            weatherTemperature.textContent =
-              Math.round(dataWeather.main.temp) + "°C";
-            weatherDescription.textContent = dataWeather.weather[0].description;
-            weatherWind.textContent = `Wind speed: ${dataWeather.wind.speed} m/s`;
-            weatherHumidity.textContent = `Humidity: ${dataWeather.main.humidity}%`;
-          });
-      });
-    setTimeout(getWeather, 60000);
+  async function getWeather() {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=en&appid=fc341543b020fb49164d8280a67986ab&units=metric`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    weatherIcon.className = "weather-icon owf";
+
+    if (data.cod[0] === "4") {
+      weatherError.textContent = `Error! city not found for '${weatherCity.value}'!`;
+      weatherTemperature.textContent = "";
+      weatherDescription.textContent = "";
+      weatherWind.textContent = ``;
+      weatherHumidity.textContent = ``;
+    } else {
+      weatherError.textContent = ``;
+      weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+      weatherTemperature.textContent = Math.round(data.main.temp) + "°C";
+      weatherDescription.textContent = data.weather[0].description;
+      weatherWind.textContent = `Wind speed: ${data.wind.speed} m/s`;
+      weatherHumidity.textContent = `Humidity: ${data.main.humidity}%`;
+    }
   }
 
   getWeather();
