@@ -39,16 +39,16 @@ export const images = () => {
       const img = new Image();
 
       if (randomImage < 10) {
-        img.src = `https://raw.githubusercontent.com/stclamp/stage1-tasks/assets/images/${timeOfDay}/0${randomImage}.jpg`;
+        img.src = `https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/0${randomImage}.webp`;
       } else {
-        img.src = `https://raw.githubusercontent.com/stclamp/stage1-tasks/assets/images/${timeOfDay}/${randomImage}.jpg`;
+        img.src = `https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/${randomImage}.webp`;
       }
 
       img.onload = () => {
         if (randomImage < 10) {
-          body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/stage1-tasks/assets/images/${timeOfDay}/0${randomImage}.jpg')`;
+          body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/0${randomImage}.webp')`;
         } else {
-          body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/stage1-tasks/assets/images/${timeOfDay}/${randomImage}.jpg')`;
+          body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/${randomImage}.webp')`;
         }
       };
     }

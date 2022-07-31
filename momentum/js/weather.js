@@ -14,7 +14,7 @@ export const weather = () => {
 
   localStorage.getItem("city")
     ? (weatherCity.value = localStorage.getItem("city"))
-    : (weatherCity.value = "");
+    : (weatherCity.value = "Minsk");
 
   async function getWeather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=en&appid=fc341543b020fb49164d8280a67986ab&units=metric`;

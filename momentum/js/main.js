@@ -3,6 +3,7 @@ import { greetings } from "./greetings.js";
 import { weather } from "./weather.js";
 import { quotes } from "./quotes.js";
 import { images } from "./images.js";
+import { player } from "./player.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   time();
@@ -10,4 +11,5 @@ window.addEventListener("DOMContentLoaded", () => {
   weather();
   quotes();
   images();
+  player();
 });
