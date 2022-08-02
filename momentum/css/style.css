@@ -32,12 +32,87 @@ body {
   padding: 20px;
 }
 
+.player {
+  width: 300px;
+}
+
+.timeline {
+  background: white;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  height: 3px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.timeline-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.timeline .progress {
+  background: coral;
+  width: 0%;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.volume-container {
+  cursor: pointer;
+}
+
+.volume-container .volume-button {
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.volume-container .volume-button .volume {
+  transform: scale(0.7);
+}
+
+.player .volume-container {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+.aplayer .volume-container .volume-button {
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+.player .volume-container .volume-button .volume {
+  transform: scale(0.7);
+  color: #fff;
+}
+.player .volume-container .volume-slider {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  width: 0;
+  height: 5px;
+  background: white;
+  transition: 0.25s;
+}
+.player .volume-container .volume-slider .volume-percentage {
+  background: coral;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+.player .volume-container:hover .volume-slider {
+  left: 40px;
+  width: 120px;
+}
+
 .player-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 120px;
-  margin-bottom: 28px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .play-list {
@@ -66,6 +141,14 @@ body {
   font-weight: 900;
 }
 
+.time-player {
+  display: flex;
+}
+
+.time-player > * {
+  padding: 2px;
+}
+
 .item-active::before {
   color: #c5b358;
 }
@@ -84,6 +167,7 @@ body {
   opacity: 0.8;
   cursor: pointer;
   transition: 0.3s;
+  margin-right: 30px;
 }
 
 .player-icon:hover,

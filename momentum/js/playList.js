@@ -2,7 +2,7 @@ export const playList = [
   {
     title: "Aqua Caelestis",
     src: "../assets/sounds/Aqua Caelestis.mp3",
-    duration: "00:39",
+    duration: "0:39",
     isActive: false,
   },
   {

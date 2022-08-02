@@ -16,6 +16,24 @@ export const images = () => {
       setBgImage();
     });
 
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        --randomImage;
+        if (randomImage < 1) {
+          randomImage = 20;
+        }
+        setBgImage();
+      }
+
+      if (e.key === "ArrowRight") {
+        ++randomImage;
+        if (randomImage > 20) {
+          randomImage = 1;
+        }
+        setBgImage();
+      }
+    });
+
     slidePrev.addEventListener("click", () => {
       --randomImage;
       if (randomImage < 1) {

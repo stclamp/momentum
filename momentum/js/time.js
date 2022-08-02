@@ -10,7 +10,7 @@ export const time = () => {
       day: "numeric",
       weekday: "long",
     };
-    const currentDate = date.toLocaleDateString("en-EN", options);
+    const currentDate = date.toLocaleDateString("ru", options);
     timeText.textContent = currentTime;
     dateText.textContent = currentDate;
     setTimeout(showTime, 1000);
