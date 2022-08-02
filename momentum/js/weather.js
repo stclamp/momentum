@@ -1,4 +1,4 @@
-export const weather = () => {
+export const weather = (lang) => {
   const weatherIcon = document.querySelector(".weather-icon");
   const weatherCity = document.querySelector(".city");
   const weatherTemperature = document.querySelector(".temperature");
@@ -17,7 +17,7 @@ export const weather = () => {
     : (weatherCity.value = "Minsk");
 
   async function getWeather() {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=en&appid=fc341543b020fb49164d8280a67986ab&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=${lang}&appid=fc341543b020fb49164d8280a67986ab&units=metric`;
 
     const res = await fetch(url);
     const data = await res.json();
@@ -35,8 +35,12 @@ export const weather = () => {
       weatherIcon.classList.add(`owf-${data.weather[0].id}`);
       weatherTemperature.textContent = Math.round(data.main.temp) + "°C";
       weatherDescription.textContent = data.weather[0].description;
-      weatherWind.textContent = `Wind speed: ${data.wind.speed} m/s`;
-      weatherHumidity.textContent = `Humidity: ${data.main.humidity}%`;
+      weatherWind.textContent = `${
+        lang === "en" ? "Wind speed: " : "Скорость ветра: "
+      } ${data.wind.speed} ${lang === "en" ? "m/s" : "м/с"}`;
+      weatherHumidity.textContent = `${
+        lang === "en" ? "Humidity: " : "Влажность: "
+      } ${data.main.humidity}%`;
     }
   }
 

@@ -1,4 +1,4 @@
-export const greetings = () => {
+export const greetings = (lang) => {
   const greetingText = document.querySelector(".greeting");
   const nameText = document.querySelector(".name");
 
@@ -6,13 +6,29 @@ export const greetings = () => {
     const date = new Date();
     const currentHour = date.getHours();
     if (currentHour >= 6 && currentHour < 12) {
-      greetingText.textContent = "Good morning";
+      if (lang === "en") {
+        greetingText.textContent = "Good morning";
+      } else if (lang === "ru") {
+        greetingText.textContent = "Доброе утро";
+      }
     } else if (currentHour >= 12 && currentHour < 18) {
-      greetingText.textContent = "Good afternoon";
+      if (lang === "en") {
+        greetingText.textContent = "Good afternoon";
+      } else if (lang === "ru") {
+        greetingText.textContent = "Добрый день";
+      }
     } else if (currentHour >= 18 && currentHour <= 23) {
-      greetingText.textContent = "Good evening";
+      if (lang === "en") {
+        greetingText.textContent = "Good evening";
+      } else if (lang === "ru") {
+        greetingText.textContent = "Добрый вечер";
+      }
     } else {
-      greetingText.textContent = "Good night";
+      if (lang === "en") {
+        greetingText.textContent = "Good night";
+      } else if (lang === "ru") {
+        greetingText.textContent = "Доброй ночи";
+      }
     }
 
     setTimeout(greetingRender, 600000);
