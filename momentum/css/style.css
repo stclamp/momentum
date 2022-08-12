@@ -22,6 +22,12 @@ body {
   overflow: hidden;
 }
 
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -34,6 +40,8 @@ body {
 
 .player {
   width: 300px;
+  transition: 0.5s ease;
+  z-index: 999;
 }
 
 .timeline {
@@ -216,6 +224,7 @@ body {
   width: 200px;
   min-height: 180px;
   text-align: left;
+  transition: 0.5s ease;
 }
 
 .weather-error {
@@ -288,12 +297,14 @@ body {
   font-family: "Arial-MT";
   font-size: 100px;
   letter-spacing: -4px;
+  transition: 0.5s ease;
 }
 
 .date {
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
+  transition: 0.5s ease;
 }
 
 .greeting-container {
@@ -310,6 +321,7 @@ body {
   flex: 1;
   padding: 10px;
   text-align: right;
+  transition: 0.5s ease;
 }
 
 .name {
@@ -322,6 +334,7 @@ body {
   background-color: transparent;
   border: 0;
   outline: 0;
+  transition: 0.5s ease;
 }
 
 .name::placeholder {
@@ -332,7 +345,7 @@ body {
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 30vh;
@@ -340,17 +353,37 @@ body {
   padding: 20px;
 }
 
+.todo-icon {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.5s ease;
+  z-index: 999;
+}
+
+.todo-icon:hover {
+  opacity: 1;
+}
+
 .change-quote {
   margin-bottom: 30px;
   background-image: url("../assets/svg/reload.svg");
 }
 
+.quotes {
+  transition: 0.5s ease;
+}
+
 .quote {
   min-height: 32px;
+  transition: 0.5s ease;
 }
 
 .author {
   min-height: 20px;
+  transition: 0.5s ease;
 }
 
 .setting-icon {
@@ -360,10 +393,24 @@ body {
   cursor: pointer;
   opacity: 0.7;
   transition: 0.5s ease;
+  z-index: 999;
+}
+
+.settings {
+  z-index: 999;
+}
+
+.settings-switch-block {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  */
+  /* max-width: 300px; */
+  margin: 0 auto;
 }
 
 .settings-block {
-  width: 300px;
+  width: 350px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 10px;
@@ -373,6 +420,8 @@ body {
   color: #fff;
   min-height: 200px;
   transition: 0.5s ease;
+  text-align: center;
+  z-index: 999;
 }
 
 .settings-block.active {
@@ -399,6 +448,7 @@ body {
   position: relative;
   cursor: pointer;
   transition: 0.5s ease;
+  margin-top: 15px;
 }
 
 .btn-lang::after {
@@ -415,6 +465,82 @@ body {
 .btn-lang:hover,
 .btn-lang:hover::after {
   opacity: 0.7;
+}
+
+.btn-lang.active {
+  color: coral;
+}
+
+.settings-switch {
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+  align-items: center;
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.settings-input {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: coral;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 30px;
+}
+
+.overlay {
+  transition: 0.5s ease;
+}
+
+.overlay.active {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 10;
+  transition: 0.5s ease;
 }
 
 @media (max-width: 768px) {

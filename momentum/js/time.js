@@ -1,7 +1,7 @@
-export const time = (lang) => {
+export const time = ({ language, time }) => {
   const timeText = document.querySelector(".time");
   const dateText = document.querySelector(".date");
-  const language = lang;
+  const setLanguage = language;
   const showTime = () => {
     const date = new Date();
     const currentTime = date.toLocaleTimeString();
@@ -9,8 +9,6 @@ export const time = (lang) => {
     timeText.textContent = currentTime;
 
     setTimeout(showTime, 1000);
-
-    // console.log(lang);
   };
 
   const options = {
@@ -19,11 +17,19 @@ export const time = (lang) => {
     weekday: "long",
   };
   const currentDate = new Date().toLocaleDateString(
-    language === "en" ? "en-US" : "ru",
+    setLanguage === "en" ? "en-US" : "ru",
     options
   );
 
   dateText.textContent = currentDate;
+
+  if (!time) {
+    timeText.classList.add("hide");
+    dateText.classList.add("hide");
+  } else {
+    timeText.classList.remove("hide");
+    dateText.classList.remove("hide");
+  }
 
   showTime();
 };

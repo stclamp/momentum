@@ -5,16 +5,37 @@ export const player = () => {
   const playPause = document.querySelector(".play");
   const playPrev = document.querySelector(".play-prev");
   const playNext = document.querySelector(".play-next");
+  const playerCurrentName = document.querySelector(".player-current-name");
   const playListUl = document.querySelector(".play-list");
   const timeline = document.querySelector(".timeline");
   const volumeSlider = document.querySelector(".volume-slider");
   const volumeButton = document.querySelector(".volume-button");
+  const settingsPlayer = document.querySelector("#set-player");
+
+  settingsPlayer.addEventListener("click", () => {
+    localStorage.setItem("isPlayerActive", settingsPlayer.checked);
+    !JSON.parse(localStorage.getItem("isPlayerActive"))
+      ? audioPlayer.classList.add("hide")
+      : audioPlayer.classList.remove("hide");
+  });
+
+  // localStorage.getItem("isPlayerActive")
+  //   ? audioPlayer.classList.add("hide")
+  //   : audioPlayer.classList.remove("hide");
+
+  !JSON.parse(localStorage.getItem("isPlayerActive"))
+    ? audioPlayer.classList.add("hide")
+    : audioPlayer.classList.remove("hide");
+
+  settingsPlayer.checked ? audioPlayer.classList.remove("hide") : null;
 
   let isPlay = false;
+  let isPlayBtn = false;
   let currentTrack = 0;
   let currentTime = 0;
 
   const liItems = [];
+  const btnItems = [];
   let checkEndTrack;
 
   const audio = new Audio();
@@ -23,6 +44,7 @@ export const player = () => {
     audio.src = playList[currentTrack].src;
     audio.currentTime = currentTime;
     audio.play();
+    playerCurrentName.textContent = playList[currentTrack].title;
   }
 
   audioPlayer.querySelector(".time-player .length").textContent =
@@ -161,6 +183,10 @@ export const player = () => {
     liItems.forEach((item) => {
       item.classList.remove("item-active");
     });
+
+    btnItems.forEach((item) => {
+      item.classList.remove("pause");
+    });
   }
 
   function setActive() {
@@ -176,8 +202,10 @@ export const player = () => {
   function generatePlayList() {
     playList.forEach((item, i) => {
       const li = document.createElement("li");
+
       li.textContent = item.title;
       li.classList.add("play-item");
+
       liItems.push(li);
       playListUl.appendChild(li);
     });

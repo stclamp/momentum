@@ -17,6 +17,9 @@
           <button class="play player-icon"></button>
           <button class="play-next player-icon"></button>
         </div>
+        <div class="player-current">
+          <p class="player-current-name"></p>
+        </div>
         <div class="timeline-control">
           <div class="timeline">
             <div class="progress"></div>
@@ -65,25 +68,88 @@
       </div>
     </main>
     <footer class="footer">
-      <button class="change-quote"></button>
-      <div>
-        <div class="quote"></div>
-        <div class="author"></div>
-      </div>
-    </footer>
-    <div class="settings">
-      <div class="setting-icon">
-        <span class="icono-gear"></span>
-      </div>
-      <div class="settings-block">
-        <div class="settings-language">
-          <span class="settings-text">Language: </span>
-          <button class="settings-en btn-lang">EN</button>
-          <span class="settings-devider"> / </span>
-          <button class="settings-ru btn-lang">RU</button>
+      <div class="todo">
+        <div class="todo-icon">
+          <span class="icono-list"></span>
+        </div>
+        <div class="todo-block">
+          <div class="todo-add">
+            <input
+              type="text"
+              class="todo-input"
+              placeholder="Type new note..."
+            />
+            <button class="todo-add-btn">Add</button>
+          </div>
+          <ul class="todo-list"></ul>
         </div>
       </div>
-    </div>
+      <div class="quotes">
+        <button class="change-quote"></button>
+        <div>
+          <div class="quote"></div>
+          <div class="author"></div>
+        </div>
+      </div>
+      <div class="settings">
+        <div class="setting-icon">
+          <span class="icono-gear"></span>
+        </div>
+        <div class="settings-block">
+          <div class="settings-switch-block">
+            <div class="settings-switch settings-time">
+              <span>Time: </span>
+              <input
+                class="settings-input"
+                type="checkbox"
+                id="set-time"
+              /><label for="set-time">Toggle</label>
+            </div>
+            <div class="settings-switch settings-greetings">
+              <span>Greetings: </span>
+              <input
+                class="settings-input"
+                type="checkbox"
+                id="set-greeting"
+              /><label for="set-greeting">Toggle</label>
+            </div>
+            <div class="settings-switch settings-player">
+              <span>Player: </span>
+              <input
+                class="settings-input"
+                type="checkbox"
+                id="set-player"
+                checked
+              /><label for="set-player">Toggle</label>
+            </div>
+            <div class="settings-switch settings-weather">
+              <span>Weather: </span>
+              <input
+                class="settings-input"
+                type="checkbox"
+                id="set-weather"
+              /><label for="set-weather">Toggle</label>
+            </div>
+            <div class="settings-switch settings-quotes">
+              <span>Quotes: </span>
+              <input
+                class="settings-input"
+                type="checkbox"
+                id="set-quotes"
+              /><label for="set-quotes">Toggle</label>
+            </div>
+          </div>
+          <div class="settings-language">
+            <span class="settings-text">Language: </span>
+            <button class="settings-en btn-lang active">EN</button>
+            <span class="settings-devider"> / </span>
+            <button class="settings-ru btn-lang">RU</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="overlay"></div>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
