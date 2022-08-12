@@ -9,8 +9,8 @@ export const quotes = ({ language, quotes }) => {
   async function getQuotes() {
     let quotes;
     language === "en"
-      ? (quotes = "/../assets/json/quotes.json")
-      : (quotes = "/../assets/json/quotesRu.json");
+      ? (quotes = "./assets/json/quotes.json")
+      : (quotes = "./assets/json/quotesRu.json");
     const res = await fetch(quotes);
     const data = await res.json();
 
