@@ -4,6 +4,7 @@ import { weather } from "./weather.js";
 import { quotes } from "./quotes.js";
 import { images } from "./images.js";
 import { player } from "./player.js";
+import { todo } from "./todo.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   const settingsBtn = document.querySelector(".setting-icon");
@@ -94,15 +95,6 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("state", JSON.stringify(state));
   });
 
-  // window.addEventListener("click", (e) => {
-  //   if (
-  //     !e.target.classList.contains("settings-block") &&
-  //     !e.target.classList.contains("icono-gear")
-  //   ) {
-  //     settingsBlock.classList.remove("active");
-  //   }
-  // });
-
   settingsBtn.addEventListener("click", () => {
     settingsBlock.classList.toggle("active");
     overlay.classList.toggle("active");
@@ -172,4 +164,5 @@ window.addEventListener("DOMContentLoaded", () => {
   quotes(state);
   images();
   player();
+  todo();
 });

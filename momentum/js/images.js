@@ -2,6 +2,13 @@ export const images = () => {
   const body = document.querySelector("body");
   const slidePrev = document.querySelector(".slide-prev");
   const slideNext = document.querySelector(".slide-next");
+  const imageApis = document.querySelector("#apis");
+  const inputApi = document.querySelector(".settings-api-input");
+  if (localStorage.getItem("api")) {
+    imageApis.value = localStorage.getItem("api");
+  } else {
+    imageApis.value = "github";
+  }
 
   const renderBgImage = () => {
     const date = new Date();
@@ -13,6 +20,7 @@ export const images = () => {
       if (randomImage > 20) {
         randomImage = 1;
       }
+
       setBgImage();
     });
 
@@ -39,11 +47,13 @@ export const images = () => {
       if (randomImage < 1) {
         randomImage = 20;
       }
+
       setBgImage();
     });
 
+    let timeOfDay = "";
+
     function setBgImage() {
-      let timeOfDay = "morning";
       if (currentHour >= 6 && currentHour < 12) {
         timeOfDay = "morning";
       } else if (currentHour >= 12 && currentHour < 18) {
@@ -54,24 +64,53 @@ export const images = () => {
         timeOfDay = "night";
       }
 
+      inputApi.addEventListener("change", () => {
+        timeOfDay = inputApi.value;
+      });
+
       const img = new Image();
 
-      if (randomImage < 10) {
-        img.src = `https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/0${randomImage}.webp`;
-      } else {
-        img.src = `https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/${randomImage}.webp`;
-      }
+      img.src = `https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/morning/01.webp`;
 
       img.onload = () => {
-        if (randomImage < 10) {
-          body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/0${randomImage}.webp')`;
-        } else {
-          body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/${randomImage}.webp')`;
+        async function getLinkImage() {
+          let url = "";
+          let res = "";
+          let data;
+          if (localStorage.getItem("api") === "unsplash") {
+            url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${timeOfDay}&client_id=RgTk4QY7cmJ_l_u54PDBoZwxSCOYRsXuFmwDvkCCKG8`;
+            res = await fetch(url);
+            data = await res.json();
+            body.style.backgroundImage = `url(${data.urls.regular})`;
+          } else if (localStorage.getItem("api") === "flickr") {
+            url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=12bc11d17c740cd35d3ff987de40ab9c&tags=${timeOfDay}&extras=url_l&format=json&nojsoncallback=1`;
+            res = await fetch(url);
+            data = await res.json();
+            body.style.backgroundImage = `url(${data.photos.photo[randomImage].url_l})`;
+          } else {
+            if (randomImage < 10) {
+              body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/0${randomImage}.webp')`;
+            } else {
+              body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/${randomImage}.webp')`;
+            }
+          }
         }
+
+        getLinkImage();
       };
     }
 
     setBgImage();
+
+    if (localStorage.getItem("api")) {
+      imageApis.addEventListener("change", () => {
+        localStorage.setItem("api", imageApis.value);
+        setBgImage();
+      });
+    } else {
+      localStorage.setItem("api", imageApis.value);
+      setBgImage();
+    }
   };
   renderBgImage();
 };
