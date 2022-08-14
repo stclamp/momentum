@@ -97,6 +97,15 @@ export const images = () => {
             data = await res.json();
             body.style.backgroundImage = `url(${data.photos.photo[randomImage].url_l})`;
           } else {
+            if (currentHour >= 6 && currentHour < 12) {
+              timeOfDay = "morning";
+            } else if (currentHour >= 12 && currentHour < 18) {
+              timeOfDay = "afternoon";
+            } else if (currentHour >= 18 && currentHour <= 23) {
+              timeOfDay = "evening";
+            } else {
+              timeOfDay = "night";
+            }
             if (randomImage < 10) {
               body.style.backgroundImage = `url('https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/${timeOfDay}/0${randomImage}.webp')`;
             } else {
