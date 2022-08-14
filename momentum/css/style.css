@@ -551,13 +551,24 @@ body {
   color: coral;
 }
 
-.settings-switch {
+.settings-switch,
+.settings-image div {
   display: flex;
   justify-content: space-between;
   max-width: 250px;
   align-items: center;
   font-size: 25px;
   margin: 0 auto;
+}
+
+.settings-image div {
+  margin-top: 5px;
+}
+
+.settings-api-input {
+  width: 70%;
+  margin-left: 30px;
+  /* margin-top: 20px; */
 }
 
 .settings-input {

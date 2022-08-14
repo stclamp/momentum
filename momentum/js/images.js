@@ -53,7 +53,9 @@ export const images = () => {
 
     let timeOfDay = "";
 
-    function setBgImage() {
+    if (localStorage.getItem("tag")) {
+      timeOfDay = localStorage.getItem("tag");
+    } else {
       if (currentHour >= 6 && currentHour < 12) {
         timeOfDay = "morning";
       } else if (currentHour >= 12 && currentHour < 18) {
@@ -63,11 +65,18 @@ export const images = () => {
       } else {
         timeOfDay = "night";
       }
+    }
 
-      inputApi.addEventListener("change", () => {
-        timeOfDay = inputApi.value;
-      });
+    console.log(timeOfDay);
 
+    inputApi.addEventListener("change", () => {
+      timeOfDay = inputApi.value;
+      setBgImage();
+      inputApi.value = "";
+      localStorage.setItem("tag", timeOfDay);
+    });
+
+    function setBgImage() {
       const img = new Image();
 
       img.src = `https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/morning/01.webp`;
