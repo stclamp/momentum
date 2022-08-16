@@ -19,7 +19,7 @@ body {
   background: url("");
   background-blend-mode: multiply;
   transition: all 1s ease-in-out;
-  overflow: hidden;
+  overflow-x: hidden;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -352,7 +352,7 @@ body {
   width: 100%;
   height: 30vh;
   min-height: 160px;
-  padding: 20px;
+  padding: 20px 20px 5px 20px;
 }
 
 .todo-icon {
@@ -375,8 +375,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   position: absolute;
-  bottom: -700px;
-  left: 40px;
+  bottom: 90px;
+  left: -400px;
   color: #fff;
   min-height: 200px;
   transition: 0.5s ease;
@@ -384,7 +384,7 @@ body {
 }
 
 .todo-block.active {
-  bottom: 90px;
+  left: 20px;
 }
 
 .todo-add {
@@ -495,8 +495,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   position: absolute;
-  bottom: -400px;
-  right: 40px;
+  bottom: 90px;
+  right: -400px;
   color: #fff;
   min-height: 200px;
   transition: 0.5s ease;
@@ -505,7 +505,7 @@ body {
 }
 
 .settings-block.active {
-  bottom: 90px;
+  right: 20px;
 }
 
 .setting-icon:hover {
@@ -632,6 +632,27 @@ label:active:after {
   opacity: 0;
   z-index: 10;
   transition: 0.5s ease;
+}
+
+.copyrights {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.copyrights-link svg {
+  width: 50px;
+  fill: #fff;
+  transition: 0.5s ease;
+}
+
+.copyrights-github svg {
+  width: 40px;
+}
+
+.copyrights-link svg:hover {
+  fill: coral;
 }
 
 @media (max-width: 768px) {

@@ -67,8 +67,6 @@ export const images = () => {
       }
     }
 
-    console.log(timeOfDay);
-
     inputApi.addEventListener("change", () => {
       timeOfDay = inputApi.value;
       setBgImage();
