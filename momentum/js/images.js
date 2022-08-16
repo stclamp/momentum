@@ -77,7 +77,7 @@ export const images = () => {
     function setBgImage() {
       const img = new Image();
 
-      img.src = `https://raw.githubusercontent.com/stclamp/momentum-backgrounds/main/morning/01.webp`;
+      img.src = `https://live.staticflickr.com/65535/52287852982_058e3ed20e_b.jpg`;
 
       img.onload = () => {
         async function getLinkImage() {
